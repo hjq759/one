@@ -46,6 +46,12 @@ layout: default
   {% endfor %}
 {% endif %}
 
+<style>
+#post-list .post-preview {position:relative}
+#post-list .post-preview::before {pointer-events:none}
+#post-list .article-actions {position:relative;z-index:2}
+#post-list .article-actions a {position:relative;pointer-events:auto}
+</style>
 <div class="d-flex flex-wrap gap-2 mb-4" aria-label="文章管理">
 <a class="btn btn-outline-primary" href="{{ '/manage/' | relative_url }}#compose"><i class="fas fa-pen me-1"></i>写新文章</a>
 <a class="btn btn-outline-secondary" href="{{ '/manage/' | relative_url }}">文章管理</a>
@@ -134,9 +140,9 @@ layout: default
           <!-- .card-body -->
         </div>
       </a>
-      <div class="px-4 pb-3 d-flex gap-3">
-<a href="https://github.com/hjq759/one/edit/main/{{ post.path | uri_escape }}">修改</a>
-<a href="https://github.com/hjq759/one/delete/main/{{ post.path | uri_escape }}">删除</a>
+      <div class="article-actions px-4 py-3 d-flex gap-3">
+<a class="btn btn-sm btn-outline-primary" href="https://github.com/hjq759/one/edit/main/{{ post.path | uri_escape }}">修改</a>
+<a class="btn btn-sm btn-outline-danger" href="https://github.com/hjq759/one/delete/main/{{ post.path | uri_escape }}">删除</a>
 </div>
     </article>
   {% endfor %}
