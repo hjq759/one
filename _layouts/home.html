@@ -46,19 +46,31 @@ layout: default
   {% endfor %}
 {% endif %}
 
-<style>
-#post-list .post-preview {position:relative}
-#post-list .post-preview::before {pointer-events:none}
-#post-list .article-actions {position:relative;z-index:2}
-#post-list .article-actions a {position:relative;pointer-events:auto}
-</style>
-<div class="d-flex flex-wrap gap-2 mb-4" aria-label="文章管理">
-<a class="btn btn-outline-primary" href="{{ '/manage/' | relative_url }}#compose"><i class="fas fa-pen me-1"></i>写新文章</a>
-<a class="btn btn-outline-secondary" href="{{ '/manage/' | relative_url }}">文章管理</a>
+<section class="site-hero">
+  <div class="hero-orbit hero-orbit-a"></div>
+  <div class="hero-orbit hero-orbit-b"></div>
+  <div class="hero-copy">
+    <span class="hero-eyebrow"><i class="fas fa-sparkles"></i> hjq · PERSONAL NOTEBOOK</span>
+    <h1>把学习的轨迹，<br><em>写成闪光的故事。</em></h1>
+    <p>这里收藏技术练习、机器学习实验与生活中的小小发现。</p>
+    <div class="hero-actions">
+      <a class="hero-primary" href="#post-list"><i class="fas fa-arrow-down"></i> 浏览文章</a>
+      <a class="hero-ghost" href="{{ '/manage/' | relative_url }}"><i class="fas fa-pen-nib"></i> 开始写作</a>
+    </div>
+  </div>
+  <div class="hero-stat-grid" aria-label="博客统计">
+    <div class="hero-stat"><strong>{{ site.posts | size }}</strong><span>篇文章</span></div>
+    <div class="hero-stat"><strong>{{ site.tags | size }}</strong><span>个标签</span></div>
+    <div class="hero-stat hero-stat-wide"><i class="fas fa-terminal"></i><span>持续学习 / 持续更新</span></div>
+  </div>
+</section>
+<div class="home-section-heading">
+  <div><span>RECENT WRITING</span><h2>最近文章</h2></div>
+  <a href="{{ '/archives/' | relative_url }}">查看归档 <i class="fas fa-arrow-right"></i></a>
 </div>
 <div id="post-list" class="flex-grow-1 px-xl-1">
   {% for post in posts %}
-    <article class="card-wrapper card">
+    <article class="card-wrapper card post-card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
 
@@ -104,7 +116,7 @@ layout: default
 
         <div class="col-md-{{ card_body_col }}">
           <div class="card-body d-flex flex-column">
-            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+            <div class="post-index">0{{ forloop.index }}</div><h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
 
             <div class="card-text content mt-0 mb-3">
               <p>{% include post-summary.html %}</p>
