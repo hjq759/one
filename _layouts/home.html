@@ -55,13 +55,30 @@ layout: default
     <p>这里收藏技术练习、机器学习实验与生活中的小小发现。</p>
     <div class="hero-actions">
       <a class="hero-primary" href="#post-list"><i class="fas fa-arrow-down"></i> 浏览文章</a>
-      <a class="hero-ghost" href="{{ '/manage/' | relative_url }}"><i class="fas fa-pen-nib"></i> 开始写作</a>
+      <a class="hero-ghost" href="{{ '/studio/' | relative_url }}"><i class="fas fa-wave-square"></i> 进入灵感空间</a>
     </div>
   </div>
   <div class="hero-stat-grid" aria-label="博客统计">
     <div class="hero-stat"><strong>{{ site.posts | size }}</strong><span>篇文章</span></div>
     <div class="hero-stat"><strong>{{ site.tags | size }}</strong><span>个标签</span></div>
     <div class="hero-stat hero-stat-wide"><i class="fas fa-terminal"></i><span>持续学习 / 持续更新</span></div>
+  </div>
+</section>
+<section class="beyond-notes">
+  <div class="beyond-heading">
+    <span>BEYOND THE BLOG</span>
+    <h2>这里不只写文章</h2>
+  </div>
+  <div class="beyond-grid">
+    <a class="beyond-card card-sound" href="{{ '/studio/' | relative_url }}#sound">
+      <i class="fas fa-headphones"></i><span class="card-label">AMBIENT RADIO</span><strong>夜间电台</strong><p>播放一段为写作准备的氛围音。</p><b>进入 <i class="fas fa-arrow-right"></i></b>
+    </a>
+    <a class="beyond-card card-focus" href="{{ '/studio/' | relative_url }}#focus">
+      <i class="fas fa-hourglass-half"></i><span class="card-label">FOCUS MODE</span><strong>专注时刻</strong><p>给下一段深度学习留一块安静的时间。</p><b>开始计时 <i class="fas fa-arrow-right"></i></b>
+    </a>
+    <a class="beyond-card card-lab" href="{{ '/mlp-flight/' | relative_url }}">
+      <i class="fas fa-cube"></i><span class="card-label">INTERACTIVE LAB</span><strong>MLP 飞行实验</strong><p>把神经网络前向传播变成一段旅程。</p><b>打开实验 <i class="fas fa-arrow-right"></i></b>
+    </a>
   </div>
 </section>
 <div class="home-section-heading">
